@@ -13,7 +13,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("resources/jpg/background.jpg");
+    background-image: url("../jpg/background.jpg");
     border-radius: 8px;
 }
 
