@@ -2,10 +2,17 @@ const apiEndpoint = 'https://herl3zrpnf.execute-api.us-east-1.amazonaws.com/prod
 
 function invokeRegisterWalker() {
 
-    fetch(apiEndpoint + "/walker", {
+    document.getElementById('RegisterWalkerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        const formData = formToJson('RegisterWalkerForm');
+        console.log(formData); 
+    });
+
+    fetch(apiEndpoint + '/walker', {
         method: 'POST',
         headers: {
-            "Content-Type": "application/json; charset=UTF-8"
+            'Content-Type': 'application/json; charset=UTF-8'
         },
         // TO DO
         // add body for POST request
@@ -29,12 +36,10 @@ function invokeRegisterWalker() {
 
 function invokeRegisterDogOwner() {
 
-    fetch(apiEndpoint + "/owner", {
+    fetch(apiEndpoint + '/owner', {
         method: 'POST',
         headers: {
-            "Accept": "*/*",
-            "Authorization": "eyJraWQiOiJLTzRVMWZs", // Remove
-            "Content-Type": "application/json; charset=UTF-8"
+            'Content-Type': 'application/json; charset=UTF-8'
         },
         // TO DO
         // add body for POST request
@@ -54,4 +59,19 @@ function invokeRegisterDogOwner() {
         // handle errors
         console.error('There was a problem with the fetch operation:', error);
     });
+}
+
+function formToJson(formId) {
+
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+
+    const json = {};
+
+    formData.forEach((value, key) => {
+        json[key] = value;
+    });
+
+    return json;
+
 }
