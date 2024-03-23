@@ -2,10 +2,12 @@ const apiEndpoint = 'https://herl3zrpnf.execute-api.us-east-1.amazonaws.com/prod
 
 function invokeRegisterWalker() {
 
+    const formData = {};
+
     document.getElementById('RegisterWalkerForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting normally
 
-        const formData = formToJson('RegisterWalkerForm');
+        formData = formToJson('RegisterWalkerForm');
         console.log(formData); 
     });
 
@@ -14,9 +16,7 @@ function invokeRegisterWalker() {
         headers: {
             'Content-Type': 'application/json; charset=UTF-8'
         },
-        // TO DO
-        // add body for POST request
-        // body: JSON.stringify({ key: 'value' }),
+        body: JSON.stringify(formData),
     })
     .then(response => {
         if (!response.ok) {
@@ -36,27 +36,32 @@ function invokeRegisterWalker() {
 
 function invokeRegisterDogOwner() {
 
+    const formData = {};
+
+    document.getElementById('RegisterDogForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        formData = formToJson('RegisterDogForm');
+        console.log(formData); 
+    });
+
     fetch(apiEndpoint + '/owner', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json; charset=UTF-8'
         },
-        // TO DO
-        // add body for POST request
-        // body: JSON.stringify({ key: 'value' }),
+        body: JSON.stringify(formData),
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json(); // or .text() or .blob()?
+        return response.json();
     })
     .then(data => {
-        // handle response data
         console.log(data);
     })
     .catch(error => {
-        // handle errors
         console.error('There was a problem with the fetch operation:', error);
     });
 }
