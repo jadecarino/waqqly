@@ -5,8 +5,6 @@ function invokeGetWalkers() {
     fetch(apiEndpoint + "/walker", {
         method: 'GET',
         headers: {
-            "Accept": "*/*",
-            "Authorization": "eyJraWQiOiJLTzRVMWZs",
             "Content-Type": "application/json; charset=UTF-8"
         },
     })

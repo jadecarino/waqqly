@@ -5,8 +5,6 @@ function invokeRegisterWalker() {
     fetch(apiEndpoint + "/walker", {
         method: 'POST',
         headers: {
-            "Accept": "*/*",
-            "Authorization": "eyJraWQiOiJLTzRVMWZs",
             "Content-Type": "application/json; charset=UTF-8"
         },
         // TO DO
@@ -35,7 +33,7 @@ function invokeRegisterDogOwner() {
         method: 'POST',
         headers: {
             "Accept": "*/*",
-            "Authorization": "eyJraWQiOiJLTzRVMWZs",
+            "Authorization": "eyJraWQiOiJLTzRVMWZs", // Remove
             "Content-Type": "application/json; charset=UTF-8"
         },
         // TO DO
