@@ -5,7 +5,10 @@ function invokeRegisterWalker() {
     document.getElementById('RegisterWalkerForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting normally
 
-        const formData = formToJson('RegisterWalkerForm');
+        // const formData = formToJson('RegisterWalkerForm');
+        // console.log(formData); 
+
+        const formData = "{\"WalkerFirstName\": \"Jade\", \"WalkerLastName\": \"Carino\", \"WalkerPhoneNumber\": \"07100200300\", \"WalkerEmail\": \"jade@email.com\", \"WalkerAddress\": \"address\"}";
         console.log(formData); 
 
         fetch(apiEndpoint + '/walker', {
