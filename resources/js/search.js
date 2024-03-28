@@ -12,6 +12,7 @@ function invokeGetWalkers() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+        console.log(response.json())
         return response.json(); // or .text() or .blob()?
     })
     .then(data => {
