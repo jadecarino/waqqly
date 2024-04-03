@@ -11,9 +11,10 @@ async function getWalkers() {
 
     for (let walker of walkers) {
         for (let key in walker) {
-            if (walker[key].includes("WalkerFirstName")){
+            var element = walker[key]
+            if (element.includes("WalkerFirstName")){
                 const walkerItem = document.createElement("li");
-                walkerItem.textContent = walker[key];
+                walkerItem.textContent = element;
                 list.appendChild(walkerItem);
             }
         }
