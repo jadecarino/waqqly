@@ -42,7 +42,7 @@ function invokeRegisterDogOwner() {
         var json = getJson(event.target.elements)
         console.log(json);
 
-        fetch(apiEndpoint + '/owner', {
+        fetch(apiEndpoint + '/dog', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
