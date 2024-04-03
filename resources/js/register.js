@@ -4,12 +4,9 @@ function invokeRegisterWalker() {
 
     document.getElementById('RegisterWalkerForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the form from submitting normally
-
-        const formData = formToJson('RegisterWalkerForm');
-        console.log(formData); 
-
-        // const formData = "{\"WalkerFirstName\": \"Jade\", \"WalkerLastName\": \"Carino\", \"WalkerPhoneNumber\": \"07100200300\", \"WalkerEmail\": \"jade@email.com\", \"WalkerAddress\": \"address\"}";
-        console.log(formData); 
+        
+        var json = getJson(event.target.elements)
+        console.log(json);
 
         fetch(apiEndpoint + '/walker', {
             method: 'POST',
@@ -42,8 +39,8 @@ function invokeRegisterDogOwner() {
     document.getElementById('RegisterDogForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const formData = formToJson('RegisterDogForm');
-        console.log(formData); 
+        var json = getJson(event.target.elements)
+        console.log(json);
 
         fetch(apiEndpoint + '/owner', {
             method: 'POST',
@@ -69,17 +66,14 @@ function invokeRegisterDogOwner() {
 
 }
 
-function formToJson(formId) {
-
-    const form = document.getElementById(formId);
-    const formData = new FormData(form);
-
-    const json = {};
-
-    formData.forEach((value, key) => {
-        json[key] = value;
-    });
+function getJson(elements) {
+    var formData = {};
+    for (let el in elements) {
+        if (el.name){
+            formData[el.name] = el.value;
+        }
+    }
+    var json = JSON.stringify(formData)
 
     return json;
-
 }
