@@ -11,7 +11,7 @@ function invokeRegisterWalker() {
         fetch(apiEndpoint + '/walker', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;'
+                'Content-Type': 'application/json'
             },
             body: json,
         })
@@ -45,7 +45,7 @@ function invokeRegisterDogOwner() {
         fetch(apiEndpoint + '/owner', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;'
+                'Content-Type': 'application/json'
             },
             body: json,
         })
