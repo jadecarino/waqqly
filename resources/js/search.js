@@ -4,36 +4,36 @@ window.onload = getWalkers()
 
 async function getWalkers() {
 
-    const walkersFromDB = await fetchWalkerDetailsFromDatabase()
+    const walkersFromDB = await fetchWalkerDetailsFromDatabase();
 
-    const tableBody = document.getElementById("WalkerTableBody");
-    tableBody.innerHTML = "";
+    const tableBody = document.getElementById('WalkerTableBody');
+    tableBody.innerHTML = '';
 
     
     for (const walkerObject of walkersFromDB) {
         for (const key in walkerObject) {
-            if (key == "Walker") {
+            if (key == 'Walker') {
 
                 // This is the actual information we want to display
                 const walkerInfo = walkerObject[key];
                 console.log(walkerInfo);
                 
-                const tableRow = document.createElement("tr");
+                const tableRow = document.createElement('tr');
 
-                const firstNameData = document.createElement("td");
-                firstNameData.textContent = walkerInfo["FirstName"];
+                const firstNameData = document.createElement('td');
+                firstNameData.textContent = walkerInfo['FirstName'];
                 tableRow.appendChild(firstNameData);
 
-                const lastNameData = document.createElement("td");
-                lastNameData.textContent = walkerInfo["LastName"];
+                const lastNameData = document.createElement('td');
+                lastNameData.textContent = walkerInfo['LastName'];
                 tableRow.appendChild(lastNameData);
 
-                const phoneNumberData = document.createElement("td");
-                phoneNumberData.textContent = walkerInfo["PhoneNumber"];
+                const phoneNumberData = document.createElement('td');
+                phoneNumberData.textContent = walkerInfo['PhoneNumber'];
                 tableRow.appendChild(phoneNumberData);
 
-                const emailData = document.createElement("td");
-                emailData.textContent = walkerInfo["Email"];
+                const emailData = document.createElement('td');
+                emailData.textContent = walkerInfo['Email'];
                 tableRow.appendChild(emailData);
 
                 tableBody.appendChild(tableRow);
@@ -69,6 +69,9 @@ async function fetchWalkerDetailsFromDatabase() {
     return events;
 }
 
-function invokeSearchWalkers() {
-    console.log("In function search walkers")
+function invokeSearchWalkers(city) {
+    console.log('In function search walkers');
+
+    const walkerTableLabel = document.getElementById('WalkerTableLabel');
+    walkerTableLabel.textContent = 'Walkers in ' + city + ':';
 }
