@@ -68,3 +68,7 @@ async function fetchWalkerDetailsFromDatabase() {
 
     return events;
 }
+
+function invokeSearchWalkers() {
+    console.log("In function search walkers")
+}

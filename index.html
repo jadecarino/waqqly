@@ -2,92 +2,118 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Waqq.ly</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/bulma.css">
   </head>
 
   <body>
 
-        <div id="Header">
-            <header>
-                <h1>Waqq.ly Dog Walking Services</h1>
-            </header>
-            <nav>
-                <ul>
-                    <a href="/index.html" class="active"><h3>Register your dog / <br>Register as a walker</h3></a>
-                    <a href="/search.html"><h3>Search for walkers</h3></a>
-                </ul>        
-            </nav>
-        </div>
+        <nav class="navbar" role="navigation">
+            <div class="navbar-brand">
+                <h1 class="title">Waqq.ly Dog Walking Services</h1>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="/index.html" class="navbar-item is-selected">Register your dog / Register as a walker</a>
+                    <a href="/search.html" class="navbar-item">Search for walkers</a>
+                </div>
+            </div>
+        </nav>
 
-        <main>
+        <main class="section">
                 
-            <h2 id="RegisterHeading">Register</h2>
+            <h2 id="RegisterHeading" class="title is-2">Register</h2>
 
             <div id="FormDiv">
 
-                <div id="RegisterDog">
+                <div id="RegisterDog" class="box">
 
-                    <h3>Register your dog</h3>
+                    <h3 class="title is-3">Register your dog</h3>
 
                     <form id="RegisterDogForm">
 
                         <div id="DogFormDiv">
                             <div id="OwnerDetails">
-                                <h4>Owner details</h4>
+                                <h4 class="title is-4">Owner details</h4>
     
-                                <div class="input-group">
-                                    <label for="OwnerFirstName">First name:</label><br>
-                                    <input type="text" name="OwnerFirstName" id="OwnerFirstName" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="OwnerFirstName">First name:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="text" name="OwnerFirstName" id="OwnerFirstName" placeholder=""><br>
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <label for="OwnerLastName">Last name:</label><br>
-                                    <input type="text" name="OwnerLastName" id="OwnerLastName" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="OwnerLastName">Last name:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="text" name="OwnerLastName" id="OwnerLastName" placeholder=""><br>
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <label for="OwnerPhoneNumber">Phone:</label><br>
-                                    <input type="tel" name="OwnerPhoneNumber" id="OwnerPhoneNumber" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="OwnerPhoneNumber">Phone:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="tel" name="OwnerPhoneNumber" id="OwnerPhoneNumber" placeholder=""><br>  
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <label for="OwnerEmail">Email:</label><br>
-                                    <input type="email" name="OwnerEmail" id="OwnerEmail" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="OwnerEmail">Email:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="email" name="OwnerEmail" id="OwnerEmail" placeholder=""><br>
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <label for="OwnerAddress">Address:</label><br>
-                                    <input type="address" name="OwnerAddress" id="OwnerAddress" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="OwnerAddress">Address:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="address" name="OwnerAddress" id="OwnerAddress" placeholder=""><br>
+                                    </div>
                                 </div>
                             </div>
                             <div id="DogDetails">
-                                <h4>Dog details</h4>
+                                <h4 class="title is-4">Dog details</h4>
     
-                                <div class="input-group">
-                                    <label for="DogName">Name:</label><br>
-                                    <input type="text" name="DogName" id="DogName" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="DogName">Name:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="text" name="DogName" id="DogName" placeholder=""><br>
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <label for="DogBreed">Breed:</label><br>
-                                    <input type="text" name="DogBreed" id="DogBreed" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="DogBreed">Breed:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="text" name="DogBreed" id="DogBreed" placeholder=""><br>
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <input type="radio" name="DogGender" id="Male" value="Male">Male<br>
-                                    <input type="radio" name="DogGender" id="Female" value="Female">Female<br>
+                                <div class="field">
+                                    <label class="label">Gender:</label>
+                                    <div class="control">
+                                        <label class="radio">
+                                            <input type="radio" name="DogGender" id="Male" value="Male">Male<br>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="DogGender" id="Female" value="Female">Female<br>
+                                        </label>
+                                    </div>
                                 </div>
     
-                                <div class="input-group">
-                                    <label for="DogAge">Age:</label><br>
-                                    <input type="number" name="DogAge" id="DogAge" placeholder=""><br>
+                                <div class="field">
+                                    <label class="label" for="DogAge">Age:</label><br>
+                                    <div class="control">
+                                        <input class="input" type="number" name="DogAge" id="DogAge" placeholder=""><br>
+                                    </div>
                                 </div>
 
-                                <div class="input-submit-group">
-                                    <input class="button" type="submit" value="Submit" onclick="invokeRegisterDogOwner()">
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-link" type="submit" onclick="invokeRegisterDogOwner()">Register</button>
+                                    </div>
                                 </div>
                             </div>
 
@@ -97,39 +123,51 @@
     
                 </div>
                 
-                <div id="RegisterWalker">
+                <div id="RegisterWalker" class="box">
 
-                    <h3>Register as a walker</h2>
+                    <h3 class="title is-3">Register as a walker</h3>
     
                     <form id="RegisterWalkerForm">
 
-                        <div class="input-group">
-                            <label for="WalkerFirstName">First name:</label><br>
-                            <input type="text" name="WalkerFirstName" id="WalkerFirstName" placeholder=""><br>
+                        <div class="field">
+                            <label class="label" for="WalkerFirstName">First name:</label><br>
+                            <div class="control">
+                                <input class="input" type="text" name="WalkerFirstName" id="WalkerFirstName" placeholder=""><br>
+                            </div>
                         </div>
 
-                        <div class="input-group">
-                            <label for="WalkerLastName">Last name:</label><br>
-                            <input type="text" name="WalkerLastName" id="WalkerLastName" placeholder=""><br>
+                        <div class="field">
+                            <label class="label" for="WalkerLastName">Last name:</label><br>
+                            <div class="control">
+                                <input class="input" type="text" name="WalkerLastName" id="WalkerLastName" placeholder=""><br>
+                            </div>
                         </div>
 
-                        <div class="input-group">
-                            <label for="WalkerPhoneNumber">Phone:</label><br>
-                            <input type="tel" name="WalkerPhoneNumber" id="WalkerPhoneNumber" placeholder=""><br>
+                        <div class="field">
+                            <label class="label" for="WalkerPhoneNumber">Phone:</label><br>
+                            <div class="control">
+                                <input class="input" type="tel" name="WalkerPhoneNumber" id="WalkerPhoneNumber" placeholder=""><br>
+                            </div>
                         </div>
 
-                        <div class="input-group">
-                            <label for="WalkerEmail">Email:</label><br>
-                            <input type="email" name="WalkerEmail" id="WalkerEmail" placeholder=""><br>
+                        <div class="field">
+                            <label class="label" for="WalkerEmail">Email:</label><br>
+                            <div class="control">
+                                <input class="input" type="email" name="WalkerEmail" id="WalkerEmail" placeholder=""><br>
+                            </div>
                         </div>
 
-                        <div class="input-group">
-                            <label for="WalkerAddress">Address:</label><br>
-                            <input type="text" name="WalkerAddress" id="WalkerAddress" placeholder=""><br>
+                        <div class="field">
+                            <label class="label" for="WalkerAddress">Address:</label><br>
+                            <div class="control">
+                                <input class="input" type="text" name="WalkerAddress" id="WalkerAddress" placeholder=""><br>
+                            </div>
                         </div>
 
-                        <div class="input-submit-group">
-                            <input class="button" type="submit" value="Submit" onclick="invokeRegisterWalker()">
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-link" type="submit" onclick="invokeRegisterWalker()">Register</button>
+                            </div>
                         </div>
                     </form>
     
@@ -139,7 +177,7 @@
 
         </main>
         
-        <footer>
+        <footer class="footer">
             <p>Thanks for using Waqqly!</p>
         </footer>
 
