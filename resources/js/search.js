@@ -16,16 +16,22 @@ async function getWalkers() {
 
                 // This is the actual information we want to display
                 const walkerInfo = walkerObject[key];
+                console.log(walkerInfo);
                 
                 const tableRow = document.createElement("tr");
 
-                const fields = [ "FirstName", "LastName", "PhoneNumber", "Email" ];
-                for (const field in fields) {
-                    const tableData = document.createElement("td");
-                    tableData.textContent = walkerInfo[field];
-                    console.log(walkerInfo[field]);
-                    tableRow.appendChild(tableData);
-                }
+                const firstNameData = document.createElement("td").textContent(walkerInfo["FirstName"]);
+                tableRow.appendChild(firstNameData);
+
+                const lastNameData = document.createElement("td").textContent(walkerInfo["LastName"]);
+                tableRow.appendChild(lastNameData);
+
+                const phoneNumberData = document.createElement("td").textContent(walkerInfo["PhoneNumber"]);
+                tableRow.appendChild(phoneNumberData);
+
+                const emailData = document.createElement("td").textContent(walkerInfo["Email"]);
+                tableRow.appendChild(emailData);
+
                 tableBody.appendChild(tableRow);
             }
         }
