@@ -23,6 +23,7 @@ async function getWalkers() {
                 for (const field in fields) {
                     const tableData = document.createElement("td");
                     tableData.textContent = walkerInfo[field];
+                    console.log(walkerInfo[field]);
                     tableRow.appendChild(tableData);
                 }
                 tableBody.appendChild(tableRow);
