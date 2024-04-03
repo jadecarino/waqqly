@@ -10,13 +10,15 @@ async function getWalkers() {
     list.innerHTML = "";
 
     for (let walker of walkers) {
+        console.log("Walker: " + walker)
         for (let key in walker) {
-            var element = walker[key]
-            if (element.includes("WalkerFirstName")){
-                const walkerItem = document.createElement("li");
-                walkerItem.textContent = element;
-                list.appendChild(walkerItem);
-            }
+            console.log("Key: " + key)
+            // var element = walker[key]
+            // if (element.includes("WalkerFirstName")){
+            //     const walkerItem = document.createElement("li");
+            //     walkerItem.textContent = element;
+            //     list.appendChild(walkerItem);
+            // }
         }
     }
 
