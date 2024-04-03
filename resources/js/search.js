@@ -20,12 +20,12 @@ async function getWalkers() {
                 const tableRow = document.createElement("tr");
 
                 const fields = [ "FirstName", "LastName", "PhoneNumber", "Email" ];
-                for (let field in fields) {
+                for (const field in fields) {
                     const tableData = document.createElement("td");
-                    tableData.textContent = walkerInfo[field]
-                    tableRow.appendChild(tableData)
+                    tableData.textContent = walkerInfo[field];
+                    tableRow.appendChild(tableData);
                 }
-                tableBody.appendChild(tableRow)
+                tableBody.appendChild(tableRow);
             }
         }
     }
