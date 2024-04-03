@@ -5,7 +5,10 @@ window.onload = getWalkers()
 async function getWalkers() {
 
     const walkers = await fetchWalkerDetailsFromDatabase()
-    console.log(walkers)
+    
+    for (let walker of walkers.items) {
+        console.log(walker)
+    }
 
 }
 
