@@ -9,10 +9,13 @@ async function getWalkers() {
     const list = document.getElementById("WalkerList");
     list.innerHTML = "";
 
-    for (let walker of walkers) {
+    for (const walker of walkers) {
         console.log("Walker: " + walker)
-        for (let key in walker) {
+        for (const key in walker) {
             console.log("Key: " + key)
+            if (key == "Walker") {
+                console.log(walker[key])
+            }
             // var element = walker[key]
             // if (element.includes("WalkerFirstName")){
             //     const walkerItem = document.createElement("li");
