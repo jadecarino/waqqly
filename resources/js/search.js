@@ -4,22 +4,28 @@ window.onload = getWalkers()
 
 async function getWalkers() {
 
-    const walkers = await fetchWalkerDetailsFromDatabase()
+    const walkersFromDB = await fetchWalkerDetailsFromDatabase()
 
-    const list = document.getElementById("WalkerList");
-    list.innerHTML = "";
+    const tableBody = document.getElementById("WalkerTableBody");
+    tableBody.innerHTML = "";
 
-    for (const walker of walkers) {
-        console.log("Walker: " + walker)
-        for (const key in walker) {
-            console.log("Key: " + key)
+    
+    for (const walkerObject of walkersFromDB) {
+        for (const key in walkerObject) {
             if (key == "Walker") {
-                const walkerInfo = walker[key]
-                console.log(walkerInfo)
-                const displayText = "Name: " + walkerInfo["FirstName"] + " " + walkerInfo["LastName"] + " Phone number: " + walkerInfo["PhoneNumber"] + " Email address: " + walkerInfo["Email"]
-                const listItem = document.createElement("li");
-                listItem.textContent = displayText;
-                list.appendChild(listItem);
+
+                // This is the actual information we want to display
+                const walkerInfo = walkerObject[key];
+                
+                const tableRow = document.createElement("tr");
+
+                const fields = [ "FirstName", "LastName", "PhoneNumber", "Email" ];
+                for (let field in fields) {
+                    const tableData = document.createElement("td");
+                    tableData.textContent = walkerInfo[field]
+                    tableRow.appendChild(tableData)
+                }
+                tableBody.appendChild(tableRow)
             }
         }
     }
