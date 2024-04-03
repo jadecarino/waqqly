@@ -1,11 +1,20 @@
 const apiEndpoint = 'https://herl3zrpnf.execute-api.us-east-1.amazonaws.com/prod';
 
-function invokeGetWalkers() {
+window.onload = getWalkers()
+
+async function getWalkers() {
+
+    const walkers = await fetchWalkerDetailsFromDatabase()
+    console.log(walkers)
+
+}
+
+async function fetchWalkerDetailsFromDatabase() {
 
     fetch(apiEndpoint + '/walker', {
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json; charset=UTF-8'
+            'Content-Type': 'application/json'
         },
     })
     .then(response => {
