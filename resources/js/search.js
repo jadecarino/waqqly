@@ -6,7 +6,7 @@ async function getWalkers() {
 
     const walkers = await fetchWalkerDetailsFromDatabase()
     
-    for (let walker of walkers.items) {
+    for (let walker of walkers) {
         for (let key in walker) {
             console.log(walker[key])
         }
