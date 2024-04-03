@@ -16,17 +16,17 @@ function invokeRegisterWalker() {
             body: json,
         })
         .then(response => {
-            if (!response.ok) {
+            if (response.ok) {
+                showSuccessMessage('RegisterDog')
+            } else {                
                 throw new Error('Network response was not ok');
             }
-            return response.json(); // or .text() or .blob()?
+            return response.json();
         })
         .then(data => {
-            // handle response data
             console.log(data);
         })
         .catch(error => {
-            // handle errors
             console.error('There was a problem with the fetch operation:', error);
         });
 
@@ -50,7 +50,9 @@ function invokeRegisterDogOwner() {
             body: json,
         })
         .then(response => {
-            if (!response.ok) {
+            if (response.ok) {
+                showSuccessMessage('RegisterWalker')
+            } else {
                 throw new Error('Network response was not ok');
             }
             return response.json();
@@ -76,4 +78,22 @@ function getJson(elements) {
     }
     var json = JSON.stringify(formData)
     return json;
+}
+
+function showSuccessMessage(parentDivId) {
+    const parentDiv = document.getElementById(parentDivId);
+
+    const successHero = document.createElement("section");
+    successHero.classList = "hero is-success"
+
+
+    const heroBody = document.createElement("div")
+    heroBody.classList = "hero-body"
+
+    const message = document.createElement("p")
+    message.textContent = "Registration successful!"
+
+    heroBody.appendChild(message)
+    successHero.appendChild(heroBody)
+    parentDiv.appendChild(successHero);
 }
