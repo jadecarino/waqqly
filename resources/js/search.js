@@ -20,16 +20,20 @@ async function getWalkers() {
                 
                 const tableRow = document.createElement("tr");
 
-                const firstNameData = document.createElement("td").textContent(walkerInfo["FirstName"]);
+                const firstNameData = document.createElement("td");
+                firstNameData.textContent = walkerInfo["FirstName"];
                 tableRow.appendChild(firstNameData);
 
-                const lastNameData = document.createElement("td").textContent(walkerInfo["LastName"]);
+                const lastNameData = document.createElement("td");
+                lastNameData.textContent = walkerInfo["LastName"];
                 tableRow.appendChild(lastNameData);
 
-                const phoneNumberData = document.createElement("td").textContent(walkerInfo["PhoneNumber"]);
+                const phoneNumberData = document.createElement("td");
+                phoneNumberData.textContent = walkerInfo["PhoneNumber"];
                 tableRow.appendChild(phoneNumberData);
 
-                const emailData = document.createElement("td").textContent(walkerInfo["Email"]);
+                const emailData = document.createElement("td");
+                emailData.textContent = walkerInfo["Email"];
                 tableRow.appendChild(emailData);
 
                 tableBody.appendChild(tableRow);
