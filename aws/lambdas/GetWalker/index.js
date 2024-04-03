@@ -6,7 +6,6 @@ exports.handler = (event, context, callback) => {
     console.log('Received event: ', event);
 
     scanWalkers().then((data) => {
-        // Extract items from the scan result
         const walkers = data.Items;
 
         callback(null, {
@@ -18,8 +17,6 @@ exports.handler = (event, context, callback) => {
         });
     }).catch((err) => {
         console.error(err);
-
-        // Return error response
         errorResponse(err.message, context.awsRequestId, callback);
     });
 };
