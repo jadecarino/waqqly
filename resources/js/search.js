@@ -7,14 +7,16 @@ async function getWalkers() {
     const walkers = await fetchWalkerDetailsFromDatabase()
     
     for (let walker of walkers.items) {
-        console.log(walker)
+        for (let key in walker) {
+            console.log(walker[key])
+        }
     }
 
 }
 
 async function fetchWalkerDetailsFromDatabase() {
 
-    fetch(apiEndpoint + '/walker', {
+    const events = fetch(apiEndpoint + '/walker', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -34,4 +36,6 @@ async function fetchWalkerDetailsFromDatabase() {
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
+
+    return events;
 }
