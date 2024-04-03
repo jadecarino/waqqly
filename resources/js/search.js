@@ -25,11 +25,10 @@ async function fetchWalkerDetailsFromDatabase() {
         return response.json();
     })
     .then(data => {
-        // handle response data
         console.log(data);
+        return data;
     })
     .catch(error => {
-        // handle errors
         console.error('There was a problem with the fetch operation:', error);
     });
 }
