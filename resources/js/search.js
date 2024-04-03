@@ -21,8 +21,8 @@ async function fetchWalkerDetailsFromDatabase() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        console.log(response.body)
-        return response.body();
+        console.log(response.json)
+        return response.json();
     })
     .then(data => {
         // handle response data
