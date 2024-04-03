@@ -14,14 +14,12 @@ async function getWalkers() {
         for (const key in walker) {
             console.log("Key: " + key)
             if (key == "Walker") {
-                console.log(walker[key])
+                var walkerInfo = walker[key]
+                var displayText = "Name: " + walkerInfo["WalkerFirstName"] + " " + walkerInfo["WalkerLastName"] + " Phone number: " + walkerInfo["WalkerPhoneNumber"] + " Email address: " + walkerInfo["WalkerEmailAddress"]
+                const listItem = document.createElement("li");
+                listItem.textContent = displayText;
+                list.appendChild(listItem);
             }
-            // var element = walker[key]
-            // if (element.includes("WalkerFirstName")){
-            //     const walkerItem = document.createElement("li");
-            //     walkerItem.textContent = element;
-            //     list.appendChild(walkerItem);
-            // }
         }
     }
 
