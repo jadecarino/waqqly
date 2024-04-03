@@ -14,8 +14,9 @@ async function getWalkers() {
         for (const key in walker) {
             console.log("Key: " + key)
             if (key == "Walker") {
-                var walkerInfo = walker[key]
-                var displayText = "Name: " + walkerInfo["WalkerFirstName"] + " " + walkerInfo["WalkerLastName"] + " Phone number: " + walkerInfo["WalkerPhoneNumber"] + " Email address: " + walkerInfo["WalkerEmailAddress"]
+                const walkerInfo = walker[key]
+                console.log(walkerInfo)
+                const displayText = "Name: " + walkerInfo["WalkerFirstName"] + " " + walkerInfo["WalkerLastName"] + " Phone number: " + walkerInfo["WalkerPhoneNumber"] + " Email address: " + walkerInfo["WalkerEmailAddress"]
                 const listItem = document.createElement("li");
                 listItem.textContent = displayText;
                 list.appendChild(listItem);
