@@ -5,10 +5,15 @@ window.onload = getWalkers()
 async function getWalkers() {
 
     const walkers = await fetchWalkerDetailsFromDatabase()
-    
+
+    const list = document.getElementById("WalkerList");
+    list.innerHTML = "";
+
     for (let walker of walkers) {
         for (let key in walker) {
-            console.log(walker[key])
+            const walkerItem = document.createElement("li");
+            walkerItem.textContent = walker[key];
+            list.appendChild(walkerItem);
         }
     }
 

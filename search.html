@@ -17,17 +17,28 @@
             <nav>
                 <ul>
                     <a href="/index.html" class="active"><h3>Register your dog / <br>Register as a walker</h3></a>
-                    <a href="/search.html"><h3>Find dog walkers</h3></a>
+                    <a href="/search.html"><h3>Search for walkers</h3></a>
                 </ul>        
             </nav>
         </div>
         
         <main>
-            <h2 id="SearchHeading">Find walkers</h2>
+            <h2 id="SearchHeading">Search for walkers</h2>
 
             <div id="SearchDiv">
                 <div>
-                    <h3>These are all the dog walkers available:</h2>
+                    <h3>Search for dog walkers in your area</h2>
+
+                    <form id="SearchForm">
+                        <div class="input-group">
+                            <label for="WalkerCity">Please enter your city:</label><br>
+                            <input type="text" name="WalkerCity" id="WalkerCity" placeholder=""><br>
+                        </div>
+                    </form>
+
+                    <ul id="WalkerList">
+
+                    </ul>
     
                 </div>
             </div>
