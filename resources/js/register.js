@@ -13,7 +13,7 @@ function invokeRegisterWalker() {
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             },
-            body: JSON.stringify(formData),
+            body: json,
         })
         .then(response => {
             if (!response.ok) {
@@ -47,7 +47,7 @@ function invokeRegisterDogOwner() {
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             },
-            body: JSON.stringify(formData),
+            body: json,
         })
         .then(response => {
             if (!response.ok) {
@@ -68,12 +68,12 @@ function invokeRegisterDogOwner() {
 
 function getJson(elements) {
     var formData = {};
-    for (let el in elements) {
+    for (let i = 0; i < elements.length; i++) {
+        const el = elements[i]
         if (el.name){
             formData[el.name] = el.value;
         }
     }
     var json = JSON.stringify(formData)
-
     return json;
 }
