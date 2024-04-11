@@ -2,32 +2,6 @@ window.onload = getWalkers()
 
 const apiEndpoint = 'https://herl3zrpnf.execute-api.us-east-1.amazonaws.com/prod';
 
-async function fetchWalkerDetailsFromDatabase() {
-
-    const events = fetch(apiEndpoint + '/walker', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        console.log(response.json)
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        return data;
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
-
-    return events;
-}
-
 async function getWalkers() {
 
     const walkersFromDB = await fetchWalkerDetailsFromDatabase();
@@ -73,9 +47,14 @@ async function getWalkers() {
 
 }
 
-function getWalkersWithSearch(city) {
+function invokeSearchWalkers() {
+    const searchCity = document.getElementById('WalkerCity');
+    getWalkersWithSearch(searchCity)
+}
 
-    const walkersFromDB = fetchWalkerDetailsFromDatabase();
+async function getWalkersWithSearch(city) {
+
+    const walkersFromDB = await fetchWalkerDetailsFromDatabase();
 
     const tableBody = document.getElementById('WalkerTableBody');
     tableBody.innerHTML = '';
@@ -122,7 +101,28 @@ function getWalkersWithSearch(city) {
 
 }
 
-function invokeSearchWalkers() {
-    const searchCity = document.getElementById('WalkerCity');
-    getWalkersWithSearch(searchCity)
+async function fetchWalkerDetailsFromDatabase() {
+
+    const events = fetch(apiEndpoint + '/walker', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        console.log(response.json)
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        return data;
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+    return events;
 }
