@@ -14,6 +14,9 @@ async function getWalkers() {
         for (const key in walkerObject) {
             if (key == 'Walker') {
 
+                // if (walkerInfo['City'] == 'Reading') {
+                // }
+
                 // This is the actual information we want to display
                 const walkerInfo = walkerObject[key];
                 console.log(walkerInfo);
@@ -35,6 +38,10 @@ async function getWalkers() {
                 const emailData = document.createElement('td');
                 emailData.textContent = walkerInfo['Email'];
                 tableRow.appendChild(emailData);
+
+                const cityData = document.createElement('td');
+                cityData.textContent = walkerInfo['City'];
+                tableRow.appendChild(cityData);
 
                 tableBody.appendChild(tableRow);
             }
@@ -69,11 +76,11 @@ async function fetchWalkerDetailsFromDatabase() {
     return events;
 }
 
-// function invokeSearchWalkers() {
-//     console.log('In function search walkers');
+function invokeSearchWalkers() {
+    console.log('In function search walkers');
 
-//     const searchCity = document.getElementById('WalkerCity');
+    const searchCity = document.getElementById('WalkerCity');
 
-//     const walkerTableLabel = document.getElementById('WalkerTableLabel');
-//     walkerTableLabel.textContent = 'Walkers in ' + searchCity.textContent + ':';
-// }
+    const walkerTableLabel = document.getElementById('WalkerTableLabel');
+    walkerTableLabel.textContent = 'Walkers in ' + searchCity.textContent + ':';
+}
