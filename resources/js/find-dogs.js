@@ -29,7 +29,7 @@ async function getDogs() {
                 tableRow.appendChild(ageData);
 
                 const breedData = document.createElement('td');
-                breedDatabreedData.textContent = dogInfo['Breed'];
+                breedData.textContent = dogInfo['Breed'];
                 tableRow.appendChild(breedData);
 
                 const genderData = document.createElement('td');
