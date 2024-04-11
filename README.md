@@ -131,7 +131,7 @@ AWS Amplify rebuilds and redeploys the web application when it detects changes t
     1. From the Amazon API Gateway console, select the **Waqqly** API. In the **Actions** drop-down, select **Deploy API**.
     2. Select **[New Stage]** for the **Deployment stage**.
     3. Enter **prod** as the **Stage Name** and choose **Deploy**.
-    4. Copy the **Invoke URL**. If you wish to use this new API for the Waqqly web application, update Line 1 in both JavaScript files in this repository, [register.js](./resources/js/register.js) and [find.js](./resources/js/find.js). As AWS Amplify has CI/CD built in, simply push those two files with the new API endpoint to your fork of this repository, and after a couple of minutes, the new deployment will use that API.
+    4. Copy the **Invoke URL**. If you wish to use this new API for the Waqqly web application, update Line 1 in the JavaScript files in this repository, [register.js](./resources/js/register.js), [find-walkers.js](./resources/js/find-walkers.js) and [find-dogs.js](./resources/js/find-dogs.js). As AWS Amplify has CI/CD built in, simply push those two files with the new API endpoint to your fork of this repository, and after a couple of minutes, the new deployment will use that API.
 
 ### 4. Validate your cloud deployment
 

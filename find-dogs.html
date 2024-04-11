@@ -26,7 +26,8 @@
                         <a href="/index.html" class="navbar-item">Home</a>
                         <a href="/register-dog.html" class="navbar-item">Register your dog</a>
                         <a href="/register-walker.html" class="navbar-item">Register as a walker</a>
-                        <a href="/find.html" class="navbar-item is-selected">Find local walkers</a>
+                        <a href="/find-dogs.html" class="navbar-item is-selected">Find dogs to walk</a>
+                        <a href="/find-walkers.html" class="navbar-item">Find local walkers</a>
                     </div>
                 </div>
             </div>
@@ -39,26 +40,6 @@
                 <div id="FindDiv" class="column is-two-thirds">
 
                     <div class="box">
-
-                        <h4 class="title is-4">Find dog walkers in your area</h4>
-    
-                        <table id="WalkerTable" class="table is-full-width">
-                            <thead>
-                                <tr>
-                                    <th scope="col">First name</th>
-                                    <th scope="col">Last name</th>
-                                    <th scope="col">Phone number</th>
-                                    <th scope="col">Email address</th>
-                                    <th scope="col">City</th>
-                                </tr>
-                            </thead>
-                            <tbody id="WalkerTableBody">
-                                <!-- The table will be filled with data fetched from DynamoDB -->
-                            </tbody>
-                        </table>
-        
-                    </div>
-                    <!-- <div class="box">
                         
                         <h4 class="title is-4">Find dogs to walk in your area</h4>
     
@@ -72,14 +53,15 @@
                                     <th scope="col">Owner name</th>
                                     <th scope="col">Phone number</th>
                                     <th scope="col">Email address</th>
+                                    <th scope="col">City</th>
                                 </tr>
                             </thead>
-                            <tbody id="WalkerTableBody"> -->
+                            <tbody id="DogTableBody">
                                 <!-- The table will be filled with data fetched from DynamoDB -->
-                            <!-- </tbody>
+                            </tbody>
                         </table>
         
-                    </div> -->
+                    </div>
 
                 </div>
 
@@ -105,6 +87,6 @@
             </div>
         </footer>
 
-        <script src="/resources/js/find.js"></script>
+        <script src="/resources/js/find-dogs.js"></script>
   </body>
 </html>
