@@ -11,166 +11,49 @@
 
   <body>
 
-        <nav class="navbar is-light" role="navigation">
+        <nav class="navbar is-warning" role="navigation">
             <div class="navbar-brand">
-                <h1 class="title">Waqq.ly Dog Walking Services</h1>
+                <a class="navbar-item">
+                    <h3 class="title is-3">Waqq.ly Dog Walking Services</h3>
+                </a>
+                <a class="navbar-item">
+                    <span class="tag is-black">BETA</span>
+                </a>
             </div>
-            <div class="navbar-menu">
-                <div class="navbar-end">
-                    <a href="/index.html" class="navbar-item is-selected">Register your dog / Register as a walker</a>
-                    <a href="/search.html" class="navbar-item">Search for walkers</a>
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown">
+                    <a class="navbar-link">
+                        Menu
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="/register-dog.html" class="navbar-item">Register your dog</a>
+                        <a href="/register-walker.html" class="navbar-item">Register as a walker</a>
+                        <a href="/find.html" class="navbar-item">Find local walkers</a>
+                    </div>
                 </div>
             </div>
         </nav>
 
-        <main class="section">
-                
-            <h2 id="RegisterHeading" class="title is-2">Register</h2>
+        <main class="section is-large">
 
-            <div id="FormDiv">
+            <div class="container has-text-centered">
 
-                <div id="RegisterDog" class="box">
-
-                    <h3 class="title is-3">Register your dog</h3>
-
-                    <form id="RegisterDogForm">
-
-                        <div id="DogFormDiv">
-                            <div id="OwnerDetails">
-                                <h4 class="title is-4">Owner details</h4>
+                <h4 id="WelcomeHeading" class="title is-4">Welcome to Waqq.ly Dog Walking Services!</h4>
     
-                                <div class="field">
-                                    <label class="label" for="OwnerFirstName">First name:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="text" name="OwnerFirstName" id="OwnerFirstName" placeholder=""><br>
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label" for="OwnerLastName">Last name:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="text" name="OwnerLastName" id="OwnerLastName" placeholder=""><br>
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label" for="OwnerPhoneNumber">Phone:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="tel" name="OwnerPhoneNumber" id="OwnerPhoneNumber" placeholder=""><br>  
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label" for="OwnerEmail">Email:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="email" name="OwnerEmail" id="OwnerEmail" placeholder=""><br>
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label" for="OwnerAddress">Address:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="address" name="OwnerAddress" id="OwnerAddress" placeholder=""><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="DogDetails" class="mt-6">
-                                <h4 class="title is-4">Dog details</h4>
-    
-                                <div class="field">
-                                    <label class="label" for="DogName">Name:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="text" name="DogName" id="DogName" placeholder=""><br>
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label" for="DogBreed">Breed:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="text" name="DogBreed" id="DogBreed" placeholder=""><br>
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label">Gender:</label>
-                                    <div class="control">
-                                        <label class="radio">
-                                            <input type="radio" name="DogGender" id="Male" value="Male">Male<br>
-                                        </label>
-                                        <label class="radio">
-                                            <input type="radio" name="DogGender" id="Female" value="Female">Female<br>
-                                        </label>
-                                    </div>
-                                </div>
-    
-                                <div class="field">
-                                    <label class="label" for="DogAge">Age:</label><br>
-                                    <div class="control">
-                                        <input class="input" type="number" name="DogAge" id="DogAge" placeholder=""><br>
-                                    </div>
-                                </div>
+                <div class="block">
 
-                                <div class="field">
-                                    <div class="control">
-                                        <button class="button is-primary" type="submit" onclick="invokeRegisterDogAndOwner()">Register</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <button href="/register-dog.html" class="button is-large is-success">
+                        <p class="title is-5">Register your dog</p>
+                    </button>
 
-                        </div>
+                    <button href="/register-walker.html" class="button is-large is-success">
+                        <p class="title is-5">Register as a walker</p>
+                    </button>
 
-                    </form>
-    
-                </div>
-                
-                <div id="RegisterWalker" class="box">
+                    <button href="/find.html" class="button is-large is-success">
+                        <p class="title is-5">Find local walkers</p>
+                    </button>
 
-                    <h3 class="title is-3">Register as a walker</h3>
-    
-                    <form id="RegisterWalkerForm">
-
-                        <div class="field">
-                            <label class="label" for="WalkerFirstName">First name:</label><br>
-                            <div class="control">
-                                <input class="input" type="text" name="WalkerFirstName" id="WalkerFirstName" placeholder=""><br>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label" for="WalkerLastName">Last name:</label><br>
-                            <div class="control">
-                                <input class="input" type="text" name="WalkerLastName" id="WalkerLastName" placeholder=""><br>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label" for="WalkerPhoneNumber">Phone:</label><br>
-                            <div class="control">
-                                <input class="input" type="tel" name="WalkerPhoneNumber" id="WalkerPhoneNumber" placeholder=""><br>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label" for="WalkerEmail">Email:</label><br>
-                            <div class="control">
-                                <input class="input" type="email" name="WalkerEmail" id="WalkerEmail" placeholder=""><br>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label" for="WalkerAddress">Address:</label><br>
-                            <div class="control">
-                                <input class="input" type="text" name="WalkerAddress" id="WalkerAddress" placeholder=""><br>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary" type="submit" onclick="invokeRegisterWalker()">Register</button>
-                            </div>
-                        </div>
-                    </form>
-    
                 </div>
 
             </div>
@@ -178,10 +61,10 @@
         </main>
         
         <footer class="footer">
-            <h4 class="title is-4">Thanks for using Waqqly!</h4>
+            <div class="content has-text-centered">
+                <h4 class="title is-4">Thanks for using Waqq.ly!</h4>
+            </div>
         </footer>
-
-        <script src="/resources/js/register.js"></script>
             
   </body>
 </html>

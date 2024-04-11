@@ -41,7 +41,10 @@ function createWalker(requestBody) {
         LastName: requestBody.WalkerLastName,
         Email: requestBody.WalkerEmail,
         PhoneNumber: requestBody.WalkerPhoneNumber,
-        Address: requestBody.WalkerAddress
+        HouseNumber: requestBody.WalkerHouseNumber,
+        Street: requestBody.WalkerStreet,
+        City: requestBody.WalkerCity,
+        PostCode: requestBody.WalkerPostCode
     };
 }
 

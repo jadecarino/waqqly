@@ -19,6 +19,7 @@ function invokeRegisterDogAndOwner() {
             if (response.ok) {
                 showSuccessMessage('RegisterDog')
             } else {
+                showErrorMessage('RegisterDog')
                 throw new Error('Network response was not ok');
             }
             return response.json();
@@ -52,7 +53,8 @@ function invokeRegisterWalker() {
         .then(response => {
             if (response.ok) {
                 showSuccessMessage('RegisterWalker')
-            } else {                
+            } else {
+                showErrorMessage('RegisterWalker')
                 throw new Error('Network response was not ok');
             }
             return response.json();
@@ -84,8 +86,7 @@ function showSuccessMessage(parentDivId) {
     const parentDiv = document.getElementById(parentDivId);
 
     const successHero = document.createElement('section');
-    successHero.classList = 'hero is-success';
-
+    successHero.classList = 'hero is-success is-small';
 
     const heroBody = document.createElement('div');
     heroBody.classList = 'hero-body';
@@ -96,4 +97,21 @@ function showSuccessMessage(parentDivId) {
     heroBody.appendChild(message);
     successHero.appendChild(heroBody);
     parentDiv.appendChild(successHero);
+}
+
+function showErrorMessage(parentDivId) {
+    const parentDiv = document.getElementById(parentDivId);
+
+    const errorHero = document.createElement('section');
+    errorHero.classList = 'hero is-danger is-small';
+
+    const heroBody = document.createElement('div');
+    heroBody.classList = 'hero-body';
+
+    const message = document.createElement('p');
+    message.textContent = 'There was an error!';
+
+    heroBody.appendChild(message);
+    errorHero.appendChild(heroBody);
+    parentDiv.appendChild(errorHero);
 }

@@ -69,11 +69,11 @@ async function fetchWalkerDetailsFromDatabase() {
     return events;
 }
 
-function invokeSearchWalkers() {
-    console.log('In function search walkers');
+// function invokeSearchWalkers() {
+//     console.log('In function search walkers');
 
-    const searchCity = document.getElementById('WalkerCity');
+//     const searchCity = document.getElementById('WalkerCity');
 
-    const walkerTableLabel = document.getElementById('WalkerTableLabel');
-    walkerTableLabel.textContent = 'Walkers in ' + searchCity.textContent + ':';
-}
+//     const walkerTableLabel = document.getElementById('WalkerTableLabel');
+//     walkerTableLabel.textContent = 'Walkers in ' + searchCity.textContent + ':';
+// }

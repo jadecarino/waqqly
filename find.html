@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Waqq.ly</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="resources/css/bulma.css">
+  </head>
+
+  <body>
+
+        <nav class="navbar is-warning" role="navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    <h3 class="title is-3">Waqq.ly Dog Walking Services</h3>
+                </a>
+                <a class="navbar-item">
+                    <span class="tag is-black">BETA</span>
+                </a>
+            </div>
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown">
+                    <a class="navbar-link">
+                        Menu
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="/register-dog.html" class="navbar-item">Register your dog</a>
+                        <a href="/register-walker.html" class="navbar-item">Register as a walker</a>
+                        <a href="/find.html" class="navbar-item is-selected">Find local walkers</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <main class="section is-large">
+
+            <div class="columns">
+
+                <div id="FindDiv" class="column is-two-thirds">
+
+                    <div class="box">
+
+                        <h4 class="title is-4">Find dog walkers in your area</h4>
+    
+                        <!-- <form id="FindForm">
+                            <div class="field">
+                                <label class="label" for="WalkerCity">Please enter your city to filter the table below:</label><br>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerCity" id="WalkerCity" placeholder=""><br>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-primary" type="submit" onclick="invokeFindWalkers()">Find</button>
+                                </div>
+                            </div>
+                        </form> -->
+    
+                        <!-- <h5 id="WalkerTableLabel" class="title is-5 mt-6">All registered dog walkers:</h5> -->
+    
+                        <table id="WalkerTable" class="table is-full-width">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First name</th>
+                                    <th scope="col">Last name</th>
+                                    <th scope="col">Phone number</th>
+                                    <th scope="col">Email address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="WalkerTableBody">
+                                <!-- The table will be filled with data fetched from DynamoDB -->
+                            </tbody>
+                        </table>
+        
+                    </div>
+                    <!-- <div class="box">
+                        
+                        <h4 class="title is-4">Find dogs to walk in your area</h4>
+    
+                        <table id="DogTable" class="table is-full-width">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Dog name</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Breed</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Owner name</th>
+                                    <th scope="col">Phone number</th>
+                                    <th scope="col">Email address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="WalkerTableBody"> -->
+                                <!-- The table will be filled with data fetched from DynamoDB -->
+                            <!-- </tbody>
+                        </table>
+        
+                    </div> -->
+
+                </div>
+
+                <div class="column is-4">
+                    <article class="message is-warning">
+                        <div class="message-body">
+                            Attention: This site is a prototype version of Waqq.ly and is subject to frequent changes and updates.
+                            Please be aware that features, functionality, and content may not be fully perfected or protected by authentication.
+                            Your feedback is invaluable in helping us improve the user experience.
+                            Thank you for your understanding and patience as we continue to refine and enhance the platform.
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+
+        </main>
+        
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <h4 class="title is-4">Thanks for using Waqq.ly!</h4>
+            </div>
+        </footer>
+
+        <script src="/resources/js/find.js"></script>
+  </body>
+</html>

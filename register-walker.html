@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Waqq.ly</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="resources/css/bulma.css">
+  </head>
+
+  <body>
+
+        <nav class="navbar is-warning" role="navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item">
+                    <h3 class="title is-3">Waqq.ly Dog Walking Services</h3>
+                </a>
+                <a class="navbar-item">
+                    <span class="tag is-black">BETA</span>
+                </a>
+            </div>
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown">
+                    <a class="navbar-link">
+                        Menu
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a href="/register-dog.html" class="navbar-item">Register your dog</a>
+                        <a href="/register-walker.html" class="navbar-item is-selected">Register as a walker</a>
+                        <a href="/find.html" class="navbar-item">Find local walkers</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="section">
+
+            <div class="columns">
+
+                <div id="FormDiv" class="column is-two-thirds">
+                       
+                    <div id="RegisterWalker" class="box">
+    
+                        <h4 class="title is-4">Register as a walker</h4>
+        
+                        <form id="RegisterWalkerForm">
+    
+                            <div class="field">
+                                <label class="label" for="WalkerFirstName">First name:</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerFirstName" id="WalkerFirstName" placeholder=""><br>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <label class="label" for="WalkerLastName">Last name:</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerLastName" id="WalkerLastName" placeholder=""><br>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <label class="label" for="WalkerPhoneNumber">Phone:</label>
+                                <div class="control">
+                                    <input class="input" type="tel" name="WalkerPhoneNumber" id="WalkerPhoneNumber" placeholder=""><br>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <label class="label" for="WalkerEmail">Email:</label>
+                                <div class="control">
+                                    <input class="input" type="email" name="WalkerEmail" id="WalkerEmail" placeholder=""><br>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <label class="label" for="WalkerHouseNumber">Flat/House Number:</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerHouseNumber" id="WalkerHouseNumber" placeholder=""><br>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="WalkerStreet">Street:</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerStreet" id="WalkerStreet" placeholder=""><br>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="WalkerCity">City:</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerCity" id="WalkerCity" placeholder=""><br>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="WalkerPostCode">Postcode:</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="WalkerPostCode" id="WalkerPostCode" placeholder=""><br>
+                                </div>
+                            </div>
+    
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-success" type="submit" onclick="invokeRegisterWalker()">Register</button>
+                                </div>
+                            </div>
+                        </form>
+        
+                    </div>
+    
+                </div>
+    
+                <div class="column is-4">
+                    <article class="message is-warning">
+                        <div class="message-body">
+                            Attention: This site is a prototype version of Waqq.ly and is subject to frequent changes and updates.
+                            Please be aware that features, functionality, and content may not be fully perfected or protected by authentication.
+                            Your feedback is invaluable in helping us improve the user experience.
+                            Thank you for your understanding and patience as we continue to refine and enhance the platform.
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+
+        </main>
+        
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <h4 class="title is-4">Thanks for using Waqq.ly!</h4>
+            </div>
+        </footer>
+        <script src="/resources/js/register.js"></script>
+            
+  </body>
+</html>

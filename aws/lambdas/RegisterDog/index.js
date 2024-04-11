@@ -32,6 +32,7 @@ exports.handler = (event, context, callback) => {
         console.error(err);
         errorResponse(err.message, context.awsRequestId, callback)
     });
+
 };
 
 function createDog(requestBody) {
@@ -44,7 +45,10 @@ function createDog(requestBody) {
         LastName: requestBody.OwnerLastName,
         Email: requestBody.OwnerEmail,
         PhoneNumber: requestBody.OwnerPhoneNumber,
-        Address: requestBody.OwnerAddress
+        HouseNumber: requestBody.OwnerHouseNumber,
+        Street: requestBody.OwnerStreet,
+        City: requestBody.OwnerCity,
+        PostCode: requestBody.OwnerPostCode
     };
 }
 
