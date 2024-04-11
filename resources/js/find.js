@@ -1,6 +1,32 @@
+window.onload = getWalkers()
+
 const apiEndpoint = 'https://herl3zrpnf.execute-api.us-east-1.amazonaws.com/prod';
 
-window.onload = getWalkers()
+async function fetchWalkerDetailsFromDatabase() {
+
+    const events = fetch(apiEndpoint + '/walker', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        console.log(response.json)
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        return data;
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+    return events;
+}
 
 async function getWalkers() {
 
@@ -13,9 +39,6 @@ async function getWalkers() {
     for (const walkerObject of walkersFromDB) {
         for (const key in walkerObject) {
             if (key == 'Walker') {
-
-                // if (walkerInfo['City'] == 'Reading') {
-                // }
 
                 // This is the actual information we want to display
                 const walkerInfo = walkerObject[key];
@@ -50,37 +73,56 @@ async function getWalkers() {
 
 }
 
-async function fetchWalkerDetailsFromDatabase() {
+function getWalkersWithSearch(city) {
 
-    const events = fetch(apiEndpoint + '/walker', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+    const walkersFromDB = fetchWalkerDetailsFromDatabase();
+
+    const tableBody = document.getElementById('WalkerTableBody');
+    tableBody.innerHTML = '';
+
+    
+    for (const walkerObject of walkersFromDB) {
+        for (const key in walkerObject) {
+            if (key == 'Walker') {
+
+                if (walkerInfo['City'] == city) {
+
+                    // This is the actual information we want to display
+                    const walkerInfo = walkerObject[key];
+                    console.log(walkerInfo);
+                    
+                    const tableRow = document.createElement('tr');
+
+                    const firstNameData = document.createElement('td');
+                    firstNameData.textContent = walkerInfo['FirstName'];
+                    tableRow.appendChild(firstNameData);
+
+                    const lastNameData = document.createElement('td');
+                    lastNameData.textContent = walkerInfo['LastName'];
+                    tableRow.appendChild(lastNameData);
+
+                    const phoneNumberData = document.createElement('td');
+                    phoneNumberData.textContent = walkerInfo['PhoneNumber'];
+                    tableRow.appendChild(phoneNumberData);
+
+                    const emailData = document.createElement('td');
+                    emailData.textContent = walkerInfo['Email'];
+                    tableRow.appendChild(emailData);
+
+                    const cityData = document.createElement('td');
+                    cityData.textContent = walkerInfo['City'];
+                    tableRow.appendChild(cityData);
+
+                    tableBody.appendChild(tableRow);
+
+                }
+            }
         }
-        console.log(response.json)
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        return data;
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+    }
 
-    return events;
 }
 
 function invokeSearchWalkers() {
-    console.log('In function search walkers');
-
     const searchCity = document.getElementById('WalkerCity');
-
-    const walkerTableLabel = document.getElementById('WalkerTableLabel');
-    walkerTableLabel.textContent = 'Walkers in ' + searchCity.textContent + ':';
+    getWalkersWithSearch(searchCity)
 }
