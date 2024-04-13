@@ -32,10 +32,6 @@ async function getDogs() {
                 breedData.textContent = dogInfo['Breed'];
                 tableRow.appendChild(breedData);
 
-                const genderData = document.createElement('td');
-                genderData.textContent = dogInfo['Gender'];
-                tableRow.appendChild(genderData);
-
                 const ownerNameData = document.createElement('td');
                 ownerNameData.textContent = dogInfo['FirstName'] + ' ' + dogInfo['LastName'];
                 tableRow.appendChild(ownerNameData);

@@ -39,7 +39,6 @@ function createDog(requestBody) {
   return {
         DogName: requestBody.DogName,
         Breed: requestBody.DogBreed,
-        Gender: requestBody.DogGender,
         Age: requestBody.DogAge,
         FirstName: requestBody.OwnerFirstName,
         LastName: requestBody.OwnerLastName,
