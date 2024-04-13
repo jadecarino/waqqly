@@ -152,3 +152,4 @@ It is best practice to delete resources that are no longer in use to avoid unwan
 4. In the Amazon DynamoDB console, delete the **Walkers** and **Dogs** table.
 
 5. In the Amazon API Gateway console, delete the **Waqqly** API.
+
